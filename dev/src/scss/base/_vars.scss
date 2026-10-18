@@ -1,0 +1,43 @@
+@use "../tools" as *;
+
+:root {
+	--color-0: rgba(0, 0, 0, 0);
+	--color-black: #000;
+	--color-white: #fff;
+
+	// ===== Colors ======
+	--color-logo-green: #87c586;
+	--color-primary-green: #0e8f57; // = DEEP GREEN
+	--color-green-tint: #eaf8ee;
+	--color-main-text: #111;
+	--color-secondary-text: #4b5563;
+	--color-light-text: #6b7280;
+	--color-main-bg: #f7f8f8;
+	--color-borders: #d9e1e4;
+	--color-cold-steel-gray: #aeb8be;
+	--color-deep-graphite: #2a3136;
+
+	// ===== Layouts =====
+	--form-height: 486px;
+	--header-height: 120px;
+
+	@include media($mobile) {
+		--header-height: 80px;
+	}
+
+	--section-padding: #{adapt(120, 60)};
+	--section-padding-05: #{adapt(60, 30)};
+
+	--container-width: 1200px;
+	--container-padding: 10px;
+
+	// ===== Fonts =====
+	--font-size-html: 100%;
+	--font-size: #{adapt(18, 16)};
+	
+	--font-family-main: "Inter-VF", "Inter", sans-serif;
+	--font-family-secondary: "Manrope-VF", "Manrope", sans-serif;
+
+	--line-height: 120%;
+	--letter-spacing: normal;
+}

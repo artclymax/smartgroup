@@ -1,0 +1,94 @@
+@use "../tools" as *;
+
+.section-news {
+	&__container {
+		@include flex-column;
+	}
+	.section-header {
+		&:not(:last-child) {
+			margin-bottom: adapt(60, 40);
+		}
+	}
+	&__btn {
+		align-self: center;
+	}
+}
+
+.section-news-swiper {
+	width: 100%;
+	&:not(:last-child) {
+		margin-bottom: adapt(40, 20);
+	}
+	&__wrapper {
+	}
+
+	&__pagination {
+	}
+
+	&__btn {
+	}
+
+	&__btn-prev {
+	}
+
+	&__btn-next {
+	}
+}
+
+.section-news-slide {
+	&__wrapper-link {
+		@include flex-column;
+		@include reset-link;
+		border: 1px solid var(--color-primary-green);
+
+		@include hover {
+			.section-news-slide__image img {
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	&__image {
+		height: 140px;
+		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+		overflow: hidden;
+		img {
+			transition: all 0.3s;
+		}
+	}
+
+	&__content {
+		@include flex-column;
+		padding: adapt(20, 10, $mobile);
+	}
+
+	&__meta {
+		justify-content: space-between;
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+	.icon {
+		gap: 12px;
+		--width: 24px;
+	}
+	&__date {
+		@include caption;
+		color: var(--color-secondary-text);
+	}
+
+	&__title {
+		@include body-l;
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__descr {
+		@include body-s;
+
+		@include media($mobile) {
+			@include body-m;
+		}
+	}
+}

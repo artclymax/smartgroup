@@ -1,0 +1,49 @@
+@use "../tools" as *;
+
+.header-suppliers {
+	position: relative;
+	padding-top: adapt(25, 10);
+	padding-bottom: 40px;
+	&__container {
+		@include flex-column;
+		gap: 60px;
+
+		@include media($mobile) {
+			gap: 150px;
+		}
+	}
+
+	&__top {
+	}
+
+	&__logo {
+	}
+
+	&__body {
+		max-width: 680px;
+		@include flex-column;
+		gap: 20px;
+	}
+
+	&__title {
+		text-transform: uppercase;
+		border-bottom: 2px solid var(--color-primary-green);
+		padding-bottom: 10px;
+	}
+
+	&__descr {
+	}
+
+	&__btn {
+	}
+
+	&__image {
+		@include image-abs;
+		z-index: -1;
+		--object-pos: left;
+		@include media($tablet) {
+			--object-pos: 52%;
+			@include overlay(var(--color-white), 0.5)
+		}
+	}
+}

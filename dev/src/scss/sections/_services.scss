@@ -1,0 +1,62 @@
+@use "../tools" as *;
+
+.services {
+	padding-block: adapt(100, 15) var(--section-padding-05);
+
+	&__container {
+	}
+
+	&__list {
+		--min: 285px;
+		--gap: 20px;
+	}
+
+	&__item {
+	}
+}
+
+.services-item {
+	display: flex;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+
+	&__link {
+		text-decoration: none;
+		color: inherit;
+
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+
+		@include hover {
+			.services-item__image {
+				img {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+
+	&__image {
+		height: 215px;
+		overflow: hidden;
+
+		img {
+			transition: all 0.3s;
+		}
+	}
+
+	&__content {
+		background: var(--color-white);
+		flex-grow: 1;
+		padding: adapt(18, 10) adapt(20, 10);
+	}
+
+	&__title {
+		@include body-l;
+		max-width: 183px;
+
+		@include media($tablet) {
+			max-width: 100%;
+		}
+	}
+}

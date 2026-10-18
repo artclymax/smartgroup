@@ -1,0 +1,9 @@
+
+<?php get_template_part('partials/components/cookie-banner') ?>
+<?php get_template_part('partials/components/modals') ?>
+
+<?php wp_footer(); ?>
+</div>
+</body>
+
+</html>

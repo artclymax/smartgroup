@@ -1,0 +1,98 @@
+@use "../tools" as *;
+
+.category-description {
+	&__container {
+		@include flex-column;
+		gap: adapt(60, 40);
+	}
+	&__top {
+		display: flex;
+		gap: 20px;
+		@include media($mobile) {
+			flex-wrap: wrap;
+		}
+	}
+	&__content {
+		@include flex-column;
+		gap: 20px;
+	}
+
+	&__title {
+		@include title-decor;
+		&::after {
+			width: 183px;
+			height: 2px;
+		}
+	}
+
+	&__wrapper {
+		--hidden-desc-after-bg: var(--color-main-bg);
+		flex: 1 1 auto;
+	}
+
+	&__descr {
+	}
+
+	&__btn {
+		@include reset-btn;
+		text-decoration: underline;
+		background: var(--color-main-bg);
+		font-size: 18px;
+		text-decoration: underline;
+		color: var(--color-primary-green);
+		padding-top: 10px;
+
+		@include media($mobile) {
+			@include button;
+			text-decoration: none;
+		}
+	}
+
+	&__image {
+		flex: 1 1692px;
+		height: adapt(240, 150);
+	}
+
+	&__list {
+		--min: 180px;
+		gap: 20px;
+		@include media($mobile, min) {
+			box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+			padding: 20px;
+			border: 1px solid var(--color-primary-green);
+		}
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__item {
+	}
+}
+.category-description-item {
+	@include flex-column;
+	align-items: center;
+	text-align: center;
+	&__icon {
+		height: adapt(100, 50);
+		img {
+			height: 100%;
+		}
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+		@include media($mobile) {
+			@include title-3;
+		}
+	}
+
+	&__descr {
+		@include body-m;
+	}
+}

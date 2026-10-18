@@ -1,0 +1,24 @@
+@use "../tools" as *;
+
+.suppliers-about {
+	padding-bottom: var(--section-padding);
+	position: relative;
+	@include media($mobile) {
+		padding-top: 20px;
+		padding-bottom: 40px;
+	}
+	&__container {
+	}
+	.section-header {
+		max-width: 590px;
+	}
+	&__image {
+		@include image-abs;
+		z-index: -1;
+		--object-pos: left;
+		@include media($tablet) {
+			--object-pos: 52%;
+			@include overlay(var(--color-white), 0.5);
+		}
+	}
+}

@@ -1,0 +1,71 @@
+@use "../tools" as *;
+
+.icon {
+	--width: 20px;
+	--height: var(--width);
+	--bg-size: contain;
+	--bg-color: var(--color-0);
+
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+
+	&::before {
+		content: "";
+		flex-shrink: 0;
+		//margin-top: 6px;
+		width: var(--width);
+		height: var(--height);
+		background-position: center;
+		background-size: var(--bg-size);
+		background-repeat: no-repeat;
+		background-color: var(--bg-color);
+		background-image: var(--icon-bg);
+	}
+
+	&--after {
+		&::before {
+			display: none;
+		}
+		&::after {
+			content: "";
+			flex-shrink: 0;
+			width: var(--width);
+			height: var(--height);
+			background-position: center;
+			background-size: var(--bg-size);
+			background-repeat: no-repeat;
+			background-image: var(--icon-bg);
+		}
+	}
+}
+
+.icon--phone {
+	--icon-bg: url("../../../public/icons/phone.svg");
+}
+.icon--email {
+	--icon-bg: url("../../../public/icons/email.svg");
+}
+.icon--address {
+	--icon-bg: url("../../../public/icons/address.svg");
+}
+.icon--link {
+	--icon-bg: url("../../../public/icons/link.svg");
+}
+.icon--review {
+	--icon-bg: url("../../../public/icons/review.svg");
+}
+
+.icon--checkmark {
+	--icon-bg: url("../../../public/icons/checkmark.svg");
+}
+.icon--date {
+	--icon-bg: url("../../../public/icons/date.svg");
+}
+.icon--big-checkmark {
+	--icon-bg: url("../../../public/icons/big-checkmark.svg");
+}
+
+.icon--arrow-right {
+	--icon-bg: url("../../../public/icons/arrow-right.svg");
+}

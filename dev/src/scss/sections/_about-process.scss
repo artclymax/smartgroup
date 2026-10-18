@@ -1,0 +1,95 @@
+@use "../tools" as *;
+
+.about-process {
+	&__container {
+		@include flex-column;
+		gap: adapt(60, 40);
+	}
+}
+
+.about-process-swiper {
+	width: 100%;
+	@include media($mobile, min) {
+		//margin-inline: -34px !important;
+	}
+
+	&__wrapper {
+	}
+
+	&__btn {
+	}
+
+	&__btn-prev {
+	}
+
+	&__btn-next {
+	}
+	.swiper-btn-box {
+		margin-top: 20px;
+	}
+}
+
+.about-process-slide {
+	&:not(:last-child) {
+		.about-process-slide__wrapper {
+			padding-right: 20px;
+		}
+	}
+	@include media($mobile, min) {
+		&:not(:last-child) {
+			.about-process-slide__wrapper {
+				padding-right: 60px;
+				position: relative;
+
+				&::after {
+					content: "";
+					position: absolute;
+					top: 50px;
+					right: 2px;
+					width: 50px;
+					height: 8px;
+					@include bgimg(url("../../../public/images/icons/arrow-swiper-right.svg"));
+				}
+			}
+		}
+	}
+	&__wrapper {
+		@include flex-column;
+		@include media($mobile, min) {
+		}
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__number {
+		color: var(--color-primary-green);
+	}
+
+	&__icon {
+		height: adapt(52, 43);
+
+		img {
+			height: 100%;
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+		@include media($mobile) {
+			@include title-3;
+		}
+	}
+
+	&__descr {
+	}
+}

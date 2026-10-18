@@ -1,0 +1,83 @@
+@use "../tools" as *;
+
+.hero-page {
+	position: relative;
+	padding-block: 30px 60px;
+&.hero-page-simple {
+	padding-block: 30px;
+}
+	&__container {
+		position: relative;
+		z-index: 2;
+		@include flex-column;
+		gap: adapt(60, 25);
+	}
+
+	&__breadcrumbs {
+	}
+
+	&__content {
+		max-width: 600px;
+		position: relative;
+		.hero-single-news & {
+			max-width: 880px;
+		}
+		.hero-page-simple & {
+			max-width: 880px;
+		}
+		@include media($mobile, min) {
+			&::after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: -20%;
+				width: 130%;
+				height: 130%;
+				filter: blur(50px);
+				background: var(--color-white);
+				z-index: -1;
+			}
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(20, 10);
+		}
+	}
+
+	&__btn {
+	}
+
+	&__descr {
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 20);
+		}
+	}
+
+	&__image {
+		@include image-abs;
+		z-index: 1;
+
+		@include media($mobile) {
+			@include overlay(var(--color-white), 0.4);
+		}
+	}
+}
+
+.hero-page-archive {
+	position: relative;
+
+	background: var(--color-deep-graphite);
+	color: var(--color-white);
+
+	.woocommerce-breadcrumb {
+		--woo-breadcrumb-color-link: var(--color-cold-steel-gray);
+	}
+
+	.hero-page__content::after,
+	.hero-page__image::before {
+		display: none;
+	}
+}

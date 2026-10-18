@@ -1,0 +1,48 @@
+@use "../tools" as *;
+
+.about-why-us {
+	position: relative;
+	color: var(--color-white);
+
+	&__container {
+		@include flex-column;
+		gap: adapt(60, 20);
+	}
+
+	&__title {
+	}
+
+	&__list {
+		gap: adapt(20, 10);
+	}
+
+	&__item {
+	}
+
+	&__image {
+		@include image-abs;
+		@include overlay(var(--color-deep-graphite), 0.6);
+		z-index: -1;
+	}
+}
+
+.about-why-us-item {
+	padding: 10px adapt(20, 10);
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	border: 2px solid var(--color-primary-green);
+	&__icon {
+		flex-shrink: 0;
+		height: adapt(44, 24);
+		img {
+			height: 100%;
+		}
+	}
+
+	&__title {
+		@include media($mobile) {
+			@include body-l;
+		}
+	}
+}

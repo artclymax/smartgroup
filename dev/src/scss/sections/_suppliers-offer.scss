@@ -1,0 +1,46 @@
+@use "../tools" as *;
+
+.suppliers-offer {
+	&__container {
+	}
+	.section-header {
+		&:not(:last-child) {
+			margin-bottom: 40px;
+		}
+	}
+	&__list {
+		@include reset-list;
+		display: grid;
+		align-items: start;
+		@include counter(true, ".suppliers-offer-item");
+	}
+
+	&__item {
+	}
+}
+
+.suppliers-offer-item {
+	border: 1px solid var(--color-primary-green);
+	padding: adapt(20, 10);
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	&::before {
+		@include title-1;
+		flex-shrink: 0;
+		color: var(--color-primary-green);
+	}
+	&__content {
+		@include flex-column;
+		gap:  10px;
+	}
+
+	&__title {
+		@include reset;
+		font-weight: 600;
+		font-size: 18px;
+	}
+
+	&__descr {
+	}
+}

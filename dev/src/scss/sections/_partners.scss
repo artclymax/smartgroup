@@ -1,0 +1,28 @@
+@use "../tools" as *;
+
+.partners {
+	@include flex-column;
+	gap: adapt(60, 40);
+	&__container {
+		width: 100%;
+	}
+}
+
+.partners-swiper {
+	width: 100%;
+	&__wrapper {
+	}
+}
+
+.partners-slide {
+	width: auto !important;
+	padding-inline: adapt(20, 10);
+	&__wrapper {
+		height: adapt(87, 44);
+		--object-fit: contain;
+
+		img {
+			height: 100%;
+		}
+	}
+}

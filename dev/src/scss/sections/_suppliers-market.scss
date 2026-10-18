@@ -1,0 +1,50 @@
+@use "../tools" as *;
+
+.suppliers-market {
+	position: relative;
+	background: var(--color-deep-graphite);
+	color: var(--color-white);
+	
+	@include media($mobile) {
+		padding-bottom: 260px;
+	}
+	&__container {
+		position: relative;
+		z-index: 2;
+	}
+	&__content {
+		max-width: 610px;
+		@include flex-column;
+		gap: adapt(40, 20);
+	}
+
+	.section-header {
+		&__title {
+			@include title-1;
+		}
+	}
+	&__list {
+		@include reset-list;
+		@include flex-column;
+		gap: adapt(40, 20);
+	}
+
+	&__item {
+	}
+
+	&__image {
+		@include image-abs;
+		--object-pos: left;
+	}
+}
+
+.suppliers-market-item {
+	&.icon {
+		--width: 44px;
+		gap: 40px;
+	}
+	&__descr {
+		font-weight: 600;
+		font-size: 18px;
+	}
+}

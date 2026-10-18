@@ -1,0 +1,81 @@
+@use "../tools" as *;
+
+[data-running-line] {
+	--running-line-gap: 24px;
+	--running-line-speed: 45s;
+	--running-line-direction: forwards; // reverse
+
+	overflow: hidden;
+
+	// Важно для Safari: создаем контекст наложения
+	transform: translateZ(0);
+	-webkit-transform: translateZ(0);
+}
+
+[data-running-line="right"] {
+	--running-line-direction: reverse;
+}
+
+[data-running-line="left"] {
+	--running-line-direction: forwards;
+}
+
+[data-running-line-paused]:hover [data-running-line-list] {
+	animation-play-state: paused;
+	-webkit-animation-play-state: paused;
+}
+
+[data-running-line-reverse] [data-running-line-list] {
+	flex-direction: row-reverse;
+}
+
+[data-running-line-list] {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	gap: var(--running-line-gap);
+	width: max-content;
+	will-change: transform;
+
+	// Добавляем префиксы для Safari
+	animation: runningLine var(--running-line-speed, 15s) var(--running-line-direction) infinite linear;
+	-webkit-animation: runningLine var(--running-line-speed, 15s) var(--running-line-direction) infinite linear;
+}
+
+@keyframes runningLine {
+	to {
+		// Safari лучше работает без calc() с переменными в keyframes
+		// Используем фиксированное значение или вычисляем в JS
+		transform: translateX(-50%);
+	}
+}
+
+// Отдельная версия для Safari с учетом gap
+@supports (-webkit-hyphens: none) {
+	@keyframes runningLine {
+		to {
+			// Для Safari используем более простое выражение
+			transform: translateX(-50%);
+		}
+	}
+}
+[data-running-line-list] {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+	gap: var(--running-line-gap);
+	width: max-content;
+	will-change: transform;
+
+	animation: runningLine var(--running-line-speed, 15s) var(--running-line-direction) infinite linear;
+	-webkit-animation: runningLine var(--running-line-speed, 15s) var(--running-line-direction) infinite linear;
+}
+
+@keyframes runningLine {
+	to {
+		// Используем вычисленное в JS значение
+		transform: translateX(var(--running-line-offset, -50%));
+	}
+}

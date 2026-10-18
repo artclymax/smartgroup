@@ -1,0 +1,79 @@
+@use "../tools" as *;
+
+.single-news {
+	&__container {
+		@include flex-column;
+		gap: var(--section-padding);
+	}
+
+	&__content {
+	}
+
+	&__gallery {
+	}
+}
+
+.single-news-gallery {
+	@include flex-column;
+	position: relative;
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(60, 40);
+		}
+	}
+	.swiper-btn-box {
+		@include media($mobile) {
+			margin-top: 10px;
+		}
+	}
+}
+
+.single-news-swiper {
+	width: 100%;
+	&__wrapper {
+	}
+
+	&__btn {
+		@include media($mobile, min) {
+			border: 1px solid var(--color-primary-green);
+			background: var(--color-green-tint);
+
+			position: absolute;
+			bottom: 40%;
+			z-index: 2;
+		}
+	}
+
+	&__btn-prev {
+		@include media($mobile, min) {
+			left: 0;
+			transform: translateX(-50%);
+		}
+	}
+
+	&__btn-next {
+		@include media($mobile, min) {
+			right: 0;
+			transform: translateX(50%);
+		}
+	}
+}
+
+.single-news-slide {
+	&__wrapper {
+		display: flex;
+		height: adapt(410, 360);
+		border: 1px solid var(--color-primary-green);
+		overflow: hidden;
+
+		img {
+			transition: all 0.3s;
+		}
+
+		@include hover {
+			img {
+				transform: scale(1.1);
+			}
+		}
+	}
+}

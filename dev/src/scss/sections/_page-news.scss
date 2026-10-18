@@ -1,0 +1,48 @@
+@use "../tools" as *;
+
+.page-news {
+	padding-bottom: var(--section-padding);
+	&__container {
+		@include flex-column;
+		gap: 40px;
+	}
+
+	&__list {
+		gap: 20px;
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__item {
+	}
+
+	&__pagination {
+	}
+}
+
+.featured-news-item {
+	&__link {
+	}
+
+	&__image {
+	}
+
+	&__content {
+	}
+
+	&__wrapper {
+	}
+
+	&__time {
+	}
+
+	&__title {
+	}
+
+	&__descr {
+	}
+
+	&__btn {
+	}
+}

@@ -1,0 +1,25 @@
+@use "../tools" as *;
+
+.suppliers-footer {
+
+	&__container {
+		display: grid;
+		grid-template-columns: 1.8fr 1fr;
+		align-items: center;
+		gap: 40px adapt(60, 20, $tablet);
+
+		@include media($tablet) {
+			grid-template-columns: 1fr 1fr;
+		}
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+	.section-header {
+		&__title {
+			@include title-1;
+		}
+	}
+	&__contacts {
+	}
+}

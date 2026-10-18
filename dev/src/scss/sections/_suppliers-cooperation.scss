@@ -1,0 +1,31 @@
+@use "../tools" as *;
+
+.suppliers-cooperation {
+	position: relative;
+	background: var(--color-primary-green);
+	color: var(--color-white);
+	@include media($mobile) {
+		padding-block: 10px;
+	}
+	&__container {
+		position: relative;
+		z-index: 2;
+	}
+	.section-header {
+		--label-color: var(--color-logo-green);
+		&__title {
+			@include title-4;
+
+			@include media($mobile) {
+				@include title-3;
+			}
+		}
+	}
+	&__image {
+		@include image-abs;
+		--object-pos: left;
+		@include media($tablet) {
+			--object-pos: 80%;
+		}
+	}
+}

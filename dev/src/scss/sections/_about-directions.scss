@@ -1,0 +1,96 @@
+@use "../tools" as *;
+
+.about-directions {
+	padding-bottom: var(--section-padding);
+
+	&__container {
+		.section-header {
+			&:not(:last-child) {
+				margin-bottom: adapt(60, 40);
+			}
+		}
+	}
+
+	&__cards {
+		--min: 285px;
+		--gap: 20px;
+	}
+
+	&__card {
+	}
+}
+
+.about-directions-card {
+	display: flex;
+	border: 1px solid var(--color-primary-green);
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+
+	&__link {
+		text-decoration: none;
+		color: inherit;
+
+		display: flex;
+		flex-direction: column;
+
+		@include hover {
+			.about-directions-card__image {
+				img {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+
+	&__image {
+		height: 140px;
+		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+		overflow: hidden;
+
+		img {
+			transition: all 0.3s;
+		}
+	}
+
+	&__content {
+		position: relative;
+		background: var(--color-white);
+		flex-grow: 1;
+		padding: 20px 12px;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 10px;
+
+		@include media($mobile) {
+			padding: 10px;
+		}
+	}
+
+	&__icon {
+		@include square(54px);
+		@include flex-center;
+		background: var(--color-white);
+		border-radius: 100%;
+
+		position: absolute;
+		top: -34px;
+		left: 12px;
+
+		@include media($mobile) {
+			top: -44px;
+			left: 10px;
+		}
+
+		img {
+			@include square(54px);
+		}
+	}
+
+	&__title {
+	}
+
+	&__descr {
+		@include body-m;
+	}
+}

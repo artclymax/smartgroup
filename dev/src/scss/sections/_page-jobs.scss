@@ -1,0 +1,72 @@
+@use "../tools" as *;
+
+.page-jobs {
+	&__container {
+		@include flex-column;
+		gap: adapt(60, 40);
+	}
+
+	&__title {
+	}
+
+	&__list {
+		@include reset-list;
+		@include flex-column;
+		@include media($mobile) {
+			gap: 20px;
+		}
+	}
+
+	&__item {
+	}
+
+	&__form-box {
+		border: 1px solid var(--color-cold-steel-gray);
+		padding: adapt(20, 10);
+		@include flex-column;
+		gap: 20px;
+	}
+
+	&__form-title {
+		@include title-decor;
+	}
+	&__form {
+	}
+}
+
+.page-jobs-item {
+	display: grid;
+	grid-template-columns: 1fr 1.9fr 1fr;
+	align-items: start;
+	gap: 20px adapt(50, 20, $tablet);
+	border: 1px solid var(--color-primary-green);
+	background: var(--color-white);
+	padding: adapt(40, 10, $tablet) adapt(48, 10, $tablet);
+	@include media($mobile) {
+		grid-template-columns: 1fr;
+	}
+	&__header {
+		@include flex-column;
+		gap: adapt(20, 10, $tablet);
+	}
+
+	&__title {
+		@include media($mobile) {
+			@include title-3;
+		}
+	}
+
+	&__location {
+			@include body-s;
+		@include media($mobile) {
+			@include body-m;
+		}
+	}
+
+	&__descr {
+	}
+
+	&__btn {
+		align-self: center;
+	}
+}

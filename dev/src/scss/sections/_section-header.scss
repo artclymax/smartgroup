@@ -1,0 +1,59 @@
+@use "../tools" as *;
+.section-header {
+	@include flex-column;
+	--label-color: var(--color-primary-green);
+
+	&__label {
+		@include caption;
+		color: var(--label-color);
+
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		.main--suppliers & {
+			text-transform: uppercase;
+		}
+		&::before {
+			content: "";
+			width: 183px;
+			height: 2px;
+			background-color: var(--label-color);
+		}
+
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 10);
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__descr {
+	}
+}
+.section-header--two {
+	display: grid;
+	grid-template-columns: 1fr 2.5fr;
+	gap: 20px;
+	align-items: center;
+	@include media($tablet) {
+		grid-template-columns: 1fr 1.5fr;
+	}
+	@include media($mobile) {
+		grid-template-columns: 1fr;
+	}
+	.section-header {
+		&__label {
+			&:not(:last-child) {
+				margin-bottom: 0;
+			}
+		}
+
+		&__title {
+			@include title-1;
+		}
+	}
+}

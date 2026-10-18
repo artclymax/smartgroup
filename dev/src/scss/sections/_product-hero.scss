@@ -1,0 +1,113 @@
+@use "../tools" as *;
+
+.product-hero {
+	&__container {
+		@include flex-column;
+		gap: adapt(60, 25);
+	}
+
+	&__breadcrumbs {
+	}
+
+	&__wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__content {
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(20, 10);
+		}
+		@include media($mobile) {
+			@include title-4;
+		}
+	}
+
+	&__descr {
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+		@include media($mobile) {
+			@include body-m;
+		}
+	}
+
+	&__btn {
+	}
+
+	&__media {
+		width: 100%;
+		@include flex-column;
+		gap: adapt(20, 10);
+	}
+}
+
+.product-hero-swiper {
+	width: 100%;
+	&__wrapper {
+	}
+
+	&__btn {
+	}
+
+	&__btn-prev {
+	}
+
+	&__btn-next {
+	}
+}
+
+.product-hero-slide {
+	&__wrapper-link {
+		display: flex;
+		height: adapt(376, 217);
+	}
+
+	&__wrapper {
+	}
+}
+
+.product-hero-swiper-thumb {
+	width: 100%;
+	&__wrapper {
+	}
+}
+
+.product-hero-slide-thumb {
+	&__wrapper {
+		height: adapt(180, 78);
+	}
+
+	&__video-icon {
+	}
+}
+
+.slide-video {
+	background: var(--color-cold-steel-gray);
+	width: 100%;
+	height: 100%;
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include square(75px);
+		border: 2px solid var(--color-white);
+		border-radius: 50%;
+		transform: translate(-50%, -50%);
+		@include bgimg(url("../../../public/images/icons/icon-video-play.svg"), 26px);
+		@include media($mobile) {
+			transform: translate(-50%, -50%) scale(0.6);
+		}
+	}
+}

@@ -1,0 +1,107 @@
+@use "../tools" as *;
+
+.hero {
+	position: relative;
+	color: var(--color-white);
+	padding-bottom: 20px;
+	padding-top: 130px;
+	@include media($mobile) {
+		padding-top: 172px;
+		padding-bottom: 45px;
+	}
+	&__container {
+		@include flex-column;
+	}
+
+	&__title {
+		font-family: var(--font-family-secondary);
+		font-weight: 800;
+		font-size: 40px;
+		&:not(:last-child) {
+			margin-bottom: adapt(40, 10);
+		}
+		@include media($mobile) {
+			@include title-4;
+		}
+	}
+
+	&__descr {
+		&:not(:last-child) {
+			margin-bottom: 40px;
+		}
+			@include media($mobile) {
+				@include body-m;
+			}
+	}
+
+	&__btn-box {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px adapt(80, 20, $tablet);
+		&:not(:last-child) {
+			margin-bottom: 100px;
+			@include media($mobile) {
+				margin-bottom: 130px;
+			}
+		}
+	}
+
+	&__btn {
+	}
+
+	&__media {
+		@include image-abs;
+		z-index: -1;
+		@include overlay(var(--color-black), 0.6);
+	}
+}
+
+.hero-benefits-swiper {
+	width: 100%;
+	&__wrapper {
+	}
+}
+
+.hero-benefits-slide {
+	max-width: 380px !important;
+	@include media($mobile) {
+		max-width: 190px !important;
+	}
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+
+	&__image {
+		flex-shrink: 0;
+		height: 52px;
+		@include flex-center;
+		@include media($mobile) {
+			height: 26px;
+		}
+		img {
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	&__content {
+	}
+
+	&__title {
+		@include reset;
+		font-weight: 700;
+		font-size: 56px;
+
+		@include media($mobile) {
+			@include title-3;
+		}
+	}
+
+	&__descr {
+		@include media($mobile) {
+			@include body-m;
+		}
+	}
+}

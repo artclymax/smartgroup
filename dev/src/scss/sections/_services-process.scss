@@ -1,0 +1,94 @@
+@use "../tools" as *;
+
+.services-process {
+	padding-bottom: var(--section-padding);
+
+	&__container {
+		@include flex-column;
+		gap: adapt(60, 40);
+	}
+}
+
+.services-process-swiper {
+	width: 100%;
+	&__wrapper {
+	}
+
+	&__btn {
+	}
+
+	&__btn-prev {
+	}
+
+	&__btn-next {
+	}
+}
+
+.services-process-slide {
+	&:first-child {
+		margin-left: -38px;
+		@include media($mobile) {
+			margin-left: -23px;
+		}
+	}
+	&:last-child {
+		margin-right: -38px;
+		@include media($mobile) {
+			margin-right: -23px;
+		}
+	}
+	&:not(:last-child) {
+		.services-process-slide__wrapper {
+			position: relative;
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: adapt(38, 26);
+				right: adapt(12, 0);
+				width: 64px;
+				height: 8px;
+				transform: translateX(50%);
+
+				@include bgimg(url("../../../public/images/icons/arrow-swiper-right.svg"));
+				@include media($mobile) {
+					right: 10%;
+				}
+			}
+		}
+	}
+	&__wrapper {
+		padding-inline: 38px;
+		@include media($mobile) {
+			padding-inline: 23px;
+		}
+	}
+
+	&__header {
+	}
+
+	&__number {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		color: var(--color-primary-green);
+		&:not(:last-child) {
+			margin-bottom: 30px;
+		}
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+		@include media($mobile) {
+			font-weight: 700;
+			font-size: 16px;
+		}
+	}
+
+	&__descr {
+		@include body-m;
+	}
+}

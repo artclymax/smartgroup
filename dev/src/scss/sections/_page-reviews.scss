@@ -1,0 +1,35 @@
+@use "../tools" as *;
+
+.page-reviews {
+	&__container {
+		@include flex-column;
+		gap: adapt(60, 40);
+	}
+
+	&__title {
+	}
+
+	&__list {
+		gap: 20px;
+	}
+
+	&__item {
+	}
+}
+
+.reviews-item {
+	&__icon {
+	}
+
+	&__descr {
+	}
+
+	&__meta {
+	}
+
+	&__author {
+	}
+
+	&__company {
+	}
+}

@@ -1,0 +1,36 @@
+@use "../tools" as *;
+
+.category-children-list {
+	&__container {
+	}
+
+	&__list {
+		gap: 20px;
+	}
+
+	&__item {
+	}
+
+	.catalog-item {
+		&__link {
+		}
+
+		&__image {
+		}
+
+		&__content {
+		}
+
+		&__title {
+		}
+
+		&__descr {
+			&:not(:last-child) {
+				margin-bottom: adapt(20, 0);
+			}
+		}
+
+		&__btn {
+		}
+	}
+}

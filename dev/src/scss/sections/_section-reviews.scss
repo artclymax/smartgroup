@@ -1,0 +1,81 @@
+@use "../tools" as *;
+
+.section-reviews {
+	&__container {
+		@include flex-column;
+		gap: adapt(60, 20);
+	}
+	.section-header {
+		max-width: 480px;
+	}
+}
+.section-reviews-swiper {
+	width: 100%;
+	&__wrapper {
+	}
+
+	&__pagination {
+	}
+
+	&__btn {
+	}
+
+	&__btn-prev {
+	}
+
+	&__btn-next {
+	}
+}
+
+.section-reviews-slide {
+	&__wrapper {
+	}
+}
+
+.reviews-item {
+	border-top: 2px solid var(--color-primary-green);
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+	background: var(--color-white);
+	padding: 10px adapt(52, 10);
+	@include flex-column;
+	gap: 10px;
+	&__icon {
+		@include flex-center;
+		width: 80px;
+		padding-bottom: 10px;
+		border-bottom: 2px solid var(--color-primary-green);
+		--width: 44px;
+
+		@include media($mobile) {
+			--width: 25px;
+			width: 25px;
+		}
+	}
+
+	&__descr {
+		@include body-s;
+		padding: adapt(10, 0, $mobile);
+		border-bottom: 1px solid var(--color-cold-steel-gray);
+
+		@include media($mobile) {
+			@include body-m;
+			padding-bottom: 10px;
+		}
+	}
+
+	&__meta {
+		@include flex-column;
+		gap: 10px;
+	}
+
+	&__author {
+		@include media($mobile) {
+			@include title-3;
+		}
+	}
+
+	&__company {
+		@include body-s;
+		color: var(--color-secondary-text);
+	}
+}

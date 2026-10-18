@@ -1,0 +1,63 @@
+@use "../tools" as *;
+
+.page-contacts {
+	&__container {
+		@include flex-column;
+		gap: var(--section-padding);
+		@include media($mobile) {
+			gap: 40px;
+		}
+	}
+
+	&__wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 40px 20px;
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__contacts {
+		padding: adapt(50, 10, $mobile) adapt(40, 10, $mobile);
+	}
+	.contacts-box {
+		& > * {
+			&:not(:last-child) {
+				padding-bottom: 10px;
+				border-bottom: 1px solid rgba(#aeb8be, 0.4);
+			}
+		}
+	}
+
+	&__form-block {
+		padding-block: adapt(50, 10, $mobile);
+		@include flex-column;
+		gap: 20px;
+	}
+
+	&__title {
+		@include title-decor;
+	}
+
+	&__form {
+	}
+
+	&__map-box {
+		@include flex-column;
+		gap: adapt(60, 40);
+	}
+
+	&__map-title {
+	}
+
+	&__map {
+		height: 550px;
+		iframe {
+			border: none;
+			height: 100%;
+			width: 100%;
+		}
+	}
+}

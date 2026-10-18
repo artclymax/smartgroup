@@ -1,0 +1,48 @@
+@use "../tools" as *;
+
+.services-benefits {
+	&__container {
+		@include flex-column;
+		gap: 40px;
+	}
+
+	&__list {
+		@include reset-list;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		border-inline: 1px solid var(--color-primary-green);
+
+		@include media($tablet) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+			border-right: unset;
+		}
+	}
+
+	&__item {
+	}
+}
+
+.services-benefits-item {
+	padding: adapt(20, 10, $tablet) adapt(18, 10, $tablet);
+	background: var(--color-white);
+	@include flex-column;
+	gap: 10px;
+	border-block: 1px solid var(--color-primary-green);
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+	&__title {
+		@include reset;
+		font-weight: 600;
+		font-size: 18px;
+	}
+
+	&__descr {
+		@include body-s;
+
+		@include media($mobile) {
+			@include body-m;
+		}
+	}
+}

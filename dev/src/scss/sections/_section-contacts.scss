@@ -1,0 +1,45 @@
+@use "../tools" as *;
+.section-contacts {
+	&__container {
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		gap: 20px adapt(52, 20, $tablet);
+		align-items: center;
+
+		@include media($tablet) {
+			grid-template-columns: 1fr 1.5fr;
+		}
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__content {
+		@include flex-column;
+		gap: adapt(40, 20);
+	}
+
+	&__title {
+	}
+
+	.contacts-box {
+		> *:not(:first-child) {
+			padding-top: 10px;
+			border-top: 1px solid rgba(#aeb8be, 0.4);
+		}
+	}
+
+	&__map {
+		box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+		padding: 10px;
+		height: 310px;
+		@include media($mobile) {
+			border: 1px solid #5d618f;
+		}
+		iframe {
+			width: 100%;
+			height: 100%;
+			border: none;
+		}
+	}
+}
